@@ -1,0 +1,7 @@
+{
+  "name": "NextGenLedger",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

@@ -1,22 +1,38 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonList, IonRouterOutlet } from '@ionic/react';
 import './Tab1.css';
+import { Route } from 'react-router';
+import ExpenseComponent from './expense/Expense';
+import Rent from './rent/Rent';
+import AddRentForm from './form/AddRentForm';
+
+
 
 const Tab1: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Ledgers</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+        <IonList inset={true}>
+          <IonItem routerLink="/home/ledgers/expense">
+            <IonLabel>Expense Ledger</IonLabel>
+          </IonItem>
+          <IonItem routerLink="/home/ledgers/income">
+            <IonLabel>Income Ledger</IonLabel>
+          </IonItem>
+          <IonItem routerLink="/home/ledgers/capital">
+            <IonLabel>Capital Ledger</IonLabel>
+          </IonItem>
+          <IonItem routerLink="/home/ledgers/asset">
+            <IonLabel>Asset Ledger</IonLabel>
+          </IonItem>
+          <IonItem routerLink="/home/ledgers/liability">
+            <IonLabel>Liability Ledger</IonLabel>
+          </IonItem>
+        </IonList>
       </IonContent>
     </IonPage>
   );
